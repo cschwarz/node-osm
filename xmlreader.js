@@ -5,6 +5,7 @@ var libxmljs = require('libxmljs');
 var Node = require('./entities/node');
 var Way = require('./entities/way');
 var Relation = require('./entities/relation');
+var Member = require('./entities/member');
 var Data = require('./entities/data');
 
 function XmlReader() {
@@ -77,6 +78,10 @@ XmlReader.prototype._readRelation = function (element) {
 	for (var i = 0; i < childNodes.length; i++) {
 		if (childNodes[i].name() == 'tag')
 			relation.tags[childNodes[i].attr('k').value()] = childNodes[i].attr('v').value();
+		else if (childNodes[i].name() == 'member')
+			relation.members.push(new Member(childNodes[i].attr('type').value(),
+				childNodes[i].attr('ref').value(),
+				childNodes[i].attr('role').value()));
 	}
 
 	return relation;

@@ -6,6 +6,12 @@ var Entity = require('./entity');
 
 function Relation() {
 	Entity.call(this);
+
+	this.members = [];
+
+	this._nodes = [];
+	this._ways = [];
+	this._relations = [];
 }
 
 util.inherits(Relation, Entity);

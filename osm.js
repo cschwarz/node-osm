@@ -4,6 +4,7 @@ exports.Entity = require('./entities/entity');
 exports.Node = require('./entities/node');
 exports.Way = require('./entities/way');
 exports.Relation = require('./entities/relation');
+exports.Member = require('./entities/member');
 exports.Data = require('./entities/data');
 
 exports.Api = require('./api');
