@@ -7,7 +7,7 @@
     "test": "grunt"
   },
   "author": "",
-  "license": "BSD",
+  "license": "MIT",
   "dependencies": {
     "libxmljs": "~0.8.1",
     "underscore": "~1.5.1",
