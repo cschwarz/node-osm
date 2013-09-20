@@ -7,6 +7,7 @@ exports.Relation = require('./entities/relation');
 exports.Member = require('./entities/member');
 exports.Data = require('./entities/data');
 
+exports.KnownApiUrl = require('./knownapiurl');
 exports.Api = require('./api');
 exports.XmlReader = require('./xmlreader');
 

@@ -3,16 +3,19 @@ module.exports = Api;
 var _ = require('underscore');
 var Promise = require('promise');
 
+var KnownApiUrl = require('./knownapiurl');
 var XmlReader = require('./xmlreader');
 var HttpClient = require('./util/httpclient');
 
 function Api() {
 }
 
+Api.baseUrl = KnownApiUrl.live;
+
 Api.map = function (boundingBox, resolveReferences) {
 	return new Promise(function (resolve, reject) {
 		resolveReferences = resolveReferences || false;
-		HttpClient.get('http://api.openstreetmap.org/api/0.6/map?bbox=' + boundingBox.toBoundingBoxString())
+		HttpClient.get(Api.baseUrl + 'map?bbox=' + boundingBox.toBoundingBoxString())
 		.then(function (result) {
 			var xmlReader = new XmlReader();
 			var data = xmlReader.read(result);
@@ -30,7 +33,7 @@ Api.map = function (boundingBox, resolveReferences) {
 
 Api.node = function (id) {
 	return new Promise(function (resolve, reject) {
-		HttpClient.get('http://api.openstreetmap.org/api/0.6/node/' + id).then(function (result) {
+		HttpClient.get(Api.baseUrl + 'node/' + id).then(function (result) {
 			var xmlReader = new XmlReader();
 			var data = xmlReader.read(result);
 			resolve(_.first(data.nodes));
@@ -45,7 +48,7 @@ Api.way = function (id, resolveReferences) {
 	return new Promise(function (resolve, reject) {
 		resolveReferences = resolveReferences || false;
 
-		var url = 'http://api.openstreetmap.org/api/0.6/way/' + id;
+		var url = Api.baseUrl + 'way/' + id;
 
 		if (resolveReferences)
 			url += '/full';
@@ -69,7 +72,7 @@ Api.relation = function (id, resolveReferences) {
 	return new Promise(function (resolve, reject) {
 		resolveReferences = resolveReferences || false;
 
-		var url = 'http://api.openstreetmap.org/api/0.6/relation/' + id;
+		var url = Api.baseUrl + 'relation/' + id;
 
 		if (resolveReferences)
 			url += '/full';
