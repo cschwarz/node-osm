@@ -1,6 +1,7 @@
 var Api = require('../api');
 
 var assert = require('assert');
+var util = require('util');
 
 describe('Api', function () {
 	describe('node()', function () {
@@ -8,8 +9,8 @@ describe('Api', function () {
 			Api.node(537791625).then(function (node) {
 				assert.equal(node.id, 537791625);
 			},
-			function () {
-				throw new Error();
+			function (e) {
+				throw new Error(util.inspect(e));
 			}).then(done, done);
 		});
 		it('should return 404', function (done) {
@@ -29,7 +30,7 @@ describe('Api', function () {
 				assert.equal(way._nodes.length, 0);
 			},
 			function (e) {
-				throw new Error();
+				throw new Error(util.inspect(e));
 			}).then(done, done);
 		});
 		it('should return way with nodes', function (done) {
@@ -39,7 +40,7 @@ describe('Api', function () {
 				assert.equal(way._nodes.length, 6);
 			},
 			function (e) {
-				throw new Error();
+				throw new Error(util.inspect(e));
 			}).then(done, done);
 		});
 		it('should return 404', function (done) {
@@ -61,7 +62,7 @@ describe('Api', function () {
 				assert.equal(relation._relations.length, 0);
 			},
 			function (e) {
-				throw new Error();
+				throw new Error(util.inspect(e));
 			}).then(done, done);
 		});
 		it('should return relation with nodes, ways and relations', function (done) {
@@ -73,7 +74,7 @@ describe('Api', function () {
 				assert.equal(relation._relations.length, 0);
 			},
 			function (e) {
-				throw new Error();
+				throw new Error(util.inspect(e));
 			}).then(done, done);
 		});
 		it('should return 404', function (done) {
