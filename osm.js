@@ -9,6 +9,7 @@ exports.Data = require('./entities/data');
 
 exports.KnownApiUrl = require('./knownapiurl');
 exports.Api = require('./api');
+exports.NotesApi = require('./notesapi');
 exports.XmlReader = require('./xmlreader');
 
 exports.MathUtil = require('./util/mathutil');
