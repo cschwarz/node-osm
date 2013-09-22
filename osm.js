@@ -6,6 +6,8 @@ exports.Way = require('./entities/way');
 exports.Relation = require('./entities/relation');
 exports.Member = require('./entities/member');
 exports.Data = require('./entities/data');
+exports.Note = require('./entities/note');
+exports.NoteComment = require('./entities/notecomment');
 
 exports.KnownApiUrl = require('./knownapiurl');
 exports.Api = require('./api');
