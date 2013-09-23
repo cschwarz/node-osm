@@ -168,7 +168,11 @@ XmlReader.prototype._readNoteComment = function (element) {
         
         if (childNodes[i].name() == 'date')
             noteComment.date = new Date(childNodes[i].text());
-		else if (childNodes[i].name() == 'action')
+		else if (childNodes[i].name() == 'uid')
+			noteComment.userId = parseInt(childNodes[i].text(), 10);
+        else if (childNodes[i].name() == 'user')
+			noteComment.user = childNodes[i].text();
+        else if (childNodes[i].name() == 'action')
 			noteComment.action = childNodes[i].text();
 		else if (childNodes[i].name() == 'text')
 			noteComment.text = childNodes[i].text();
