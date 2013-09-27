@@ -2,10 +2,11 @@ module.exports = Api;
 
 var _ = require('underscore');
 var Promise = require('promise');
+var request = require('request');
 
+var ApiError = require('./apierror');
 var KnownApiUrl = require('./knownapiurl');
 var XmlReader = require('./xmlreader');
-var HttpClient = require('./util/httpclient');
 
 function Api() {
 }
@@ -15,32 +16,35 @@ Api.baseUrl = KnownApiUrl.live;
 Api.map = function (boundingBox, resolveReferences) {
 	return new Promise(function (resolve, reject) {
 		resolveReferences = resolveReferences || false;
-		HttpClient.get(Api.baseUrl + 'map?bbox=' + boundingBox.toBoundingBoxString())
-		.then(function (result) {
-			var xmlReader = new XmlReader();
-			var data = xmlReader.read(result);
-
-			if (resolveReferences)
-				_resolveReferences(data);
-
-			resolve(data);
-		},
-		function (e) {
-			reject(e);
-		}).then(null, function (e) { reject(e); });
+        
+        request.get(Api.baseUrl + 'map',
+            { qs: { bbox: boundingBox.toBoundingBoxString() } }, function (error, response, body) {
+            if (response.statusCode != 200 || error)
+                reject(new ApiError(response.statusCode, error));
+            else {
+                var xmlReader = new XmlReader();
+                var data = xmlReader.read(body);
+    
+                if (resolveReferences)
+                    _resolveReferences(data);
+    
+                resolve(data);
+            }
+        });
 	});
 };
 
 Api.node = function (id) {
 	return new Promise(function (resolve, reject) {
-		HttpClient.get(Api.baseUrl + 'node/' + id).then(function (result) {
-			var xmlReader = new XmlReader();
-			var data = xmlReader.read(result);
-			resolve(_.first(data.nodes));
-		},
-		function (e) {
-			reject(e);
-		}).then(null, function (e) { reject(e); });
+        request.get(Api.baseUrl + 'node/' + id, function (error, response, body) {
+            if (response.statusCode != 200 || error)
+                reject(new ApiError(response.statusCode, error));
+            else {
+                var xmlReader = new XmlReader();
+                var data = xmlReader.read(body);
+                resolve(_.first(data.nodes));
+            }
+        });
 	});
 };
 
@@ -53,18 +57,19 @@ Api.way = function (id, resolveReferences) {
 		if (resolveReferences)
 			url += '/full';
 
-		HttpClient.get(url).then(function (result) {
-			var xmlReader = new XmlReader();
-			var data = xmlReader.read(result);
-
-			if (resolveReferences)
-				_resolveReferences(data);
-
-			resolve(_.first(data.ways));
-		},
-		function (e) {
-			reject(e);
-		}).then(null, function (e) { reject(e); });
+        request.get(url, function (error, response, body) {
+            if (response.statusCode != 200 || error)
+                reject(new ApiError(response.statusCode, error));
+            else {
+                var xmlReader = new XmlReader();
+                var data = xmlReader.read(body);
+    
+                if (resolveReferences)
+                    _resolveReferences(data);
+    
+                resolve(_.first(data.ways));
+            }
+        });
 	});
 };
 
@@ -77,18 +82,19 @@ Api.relation = function (id, resolveReferences) {
 		if (resolveReferences)
 			url += '/full';
 
-		HttpClient.get(url).then(function (result) {
-			var xmlReader = new XmlReader();
-			var data = xmlReader.read(result);
-
-			if (resolveReferences)
-				_resolveReferences(data);
-
-			resolve(_.first(data.relations));
-		},
-		function (e) {
-			reject(e);
-		}).then(null, function (e) { reject(e); });
+        request.get(url, function (error, response, body) {
+            if (response.statusCode != 200 || error)
+                reject(new ApiError(response.statusCode, error));
+            else {
+                var xmlReader = new XmlReader();
+                var data = xmlReader.read(body);
+    
+                if (resolveReferences)
+                    _resolveReferences(data);
+    
+                resolve(_.first(data.relations));
+            }
+        });
 	});
 };
 
