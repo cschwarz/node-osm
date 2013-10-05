@@ -107,7 +107,7 @@ XmlReader.prototype._readRelation = function (element) {
 			relation.tags[childNodes[i].attr('k').value()] = childNodes[i].attr('v').value();
 		else if (childNodes[i].name() == 'member')
 			relation.members.push(new Member(childNodes[i].attr('type').value(),
-				childNodes[i].attr('ref').value(),
+				parseInt(childNodes[i].attr('ref').value(), 10),
 				childNodes[i].attr('role').value()));
 	}
 
