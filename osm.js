@@ -8,11 +8,13 @@ exports.Member = require('./entities/member');
 exports.Data = require('./entities/data');
 exports.Note = require('./entities/note');
 exports.NoteComment = require('./entities/notecomment');
+exports.Changeset = require('./entities/changeset');
 
 exports.ApiError = require('./apierror');
 exports.KnownApiUrl = require('./knownapiurl');
 exports.Api = require('./api');
 exports.NotesApi = require('./notesapi');
 exports.XmlReader = require('./xmlreader');
+exports.XmlChangesetReader = require('./xmlchangesetreader');
 
 exports.MathUtil = require('./util/mathutil');
