@@ -2,99 +2,120 @@ module.exports = XmlChangesetReader;
 
 var fs = require('fs');
 var libxml = require('libxmljs');
+var util = require('util');
+var events = require('events');
 
 var BoundingBox = require('./boundingbox');
 var Changeset = require('./entities/changeset');
+var ChangesetMetadata = require('./entities/changesetmetadata');
 
 function XmlChangesetReader(threshold) {
+    events.EventEmitter.call(this);
+
     this.threshold = threshold || 1000;
+
+    this.changesets = [];
+    this.changeset = null;
 }
 
-XmlChangesetReader.prototype.readString = function (xml, callback) {
-    var self = this;
+util.inherits(XmlChangesetReader, events.EventEmitter);
 
-	var changesets = [];
-    var changeset = null;
+XmlChangesetReader.prototype.readString = function (xml) {
+    var self = this;
 
 	var parser = new libxml.SaxParser();
 
     parser.on('startElementNS', function (element, attributes, prefix, uri, namespace) {
-        changeset = self._startElement(element, attributes, changeset);
+        self._startElement(element, attributes);
     });
 
     parser.on('endElementNS', function (element, prefix, uri) {
-        self._endElement(element, changesets, changeset, callback);
+        self._endElement(element);
     });
 
     parser.parseString(xml);
 };
 
-XmlChangesetReader.prototype.readFile = function (path, callback) {
+XmlChangesetReader.prototype.readFile = function (path) {
 	var self = this;
-
-	var changesets = [];
-    var changeset = null;
 
 	var parser = new libxml.SaxPushParser();
 
     parser.on('startElementNS', function (element, attributes, prefix, uri, namespace) {
-        changeset = self._startElement(element, attributes, changeset);
+        self._startElement(element, attributes);
     });
 
     parser.on('endElementNS', function (element, prefix, uri) {
-        self._endElement(element, changesets, changeset, callback);
+        self._endElement(element);
     });
 
     fs.createReadStream(path, { encoding: 'utf8' }).on('data', function (data) { parser.push(data); });
 };
 
-XmlChangesetReader.prototype._startElement = function (element, attributes, changeset) {
+XmlChangesetReader.prototype._startElement = function (element, attributes) {
     if (element === 'changeset') {
-        changeset = new Changeset();
+        this.changeset = new Changeset();
 
-        changeset.id = parseInt(this._getAttribute(attributes, 'id'), 10);
-        changeset.createdAt = new Date(this._getAttribute(attributes, 'created_at'));
+        this.changeset.id = parseInt(this._getAttribute(attributes, 'id'), 10);
+        this.changeset.createdAt = new Date(this._getAttribute(attributes, 'created_at'));
 
         if (this._hasAttribute(attributes, 'closed_at'))
-            changeset.closedAt = new Date(this._getAttribute(attributes, 'closed_at'));
+            this.changeset.closedAt = new Date(this._getAttribute(attributes, 'closed_at'));
 
-        changeset.changeCount = parseInt(this._getAttribute(attributes, 'num_changes'), 10);
-        changeset.open = this._getAttribute(attributes, 'open') === 'true' ? true : false;
+        this.changeset.changeCount = parseInt(this._getAttribute(attributes, 'num_changes'), 10);
+        this.changeset.open = this._getAttribute(attributes, 'open') === 'true' ? true : false;
 
         if (this._hasAttribute(attributes, 'user'))
-            changeset.user = this._getAttribute(attributes, 'user');
+            this.changeset.user = this._getAttribute(attributes, 'user');
 
         if (this._hasAttribute(attributes, 'uid'))
-            changeset.userId = parseInt(this._getAttribute(attributes, 'uid'), 10);
+            this.changeset.userId = parseInt(this._getAttribute(attributes, 'uid'), 10);
 
         if (this._hasAttribute(attributes, 'min_lon') && this._hasAttribute(attributes, 'min_lat') &&
             this._hasAttribute(attributes, 'max_lon') && this._hasAttribute(attributes, 'max_lat'))
-            changeset.boundingBox = new BoundingBox(parseFloat(this._getAttribute(attributes, 'min_lon')),
-                                                    parseFloat(this._getAttribute(attributes, 'min_lat')),
-                                                    parseFloat(this._getAttribute(attributes, 'max_lon')),
-                                                    parseFloat(this._getAttribute(attributes, 'max_lat')));
+            this.changeset.boundingBox = new BoundingBox(parseFloat(this._getAttribute(attributes, 'min_lon')),
+                                                         parseFloat(this._getAttribute(attributes, 'min_lat')),
+                                                         parseFloat(this._getAttribute(attributes, 'max_lon')),
+                                                         parseFloat(this._getAttribute(attributes, 'max_lat')));
 
 
-        changeset.id = this._getAttribute(attributes, 'id');
+        this.changeset.id = this._getAttribute(attributes, 'id');
     }
     else if (element === 'tag') {
-        changeset.tags[this._getAttribute(attributes, 'k')] = this._getAttribute(attributes, 'v');
+        this.changeset.tags[this._getAttribute(attributes, 'k')] = this._getAttribute(attributes, 'v');
     }
+    else if (element === 'osm') {
+        var changesetMetadata = new ChangesetMetadata();
 
-    return changeset;
+        changesetMetadata.generator = this._getAttribute(attributes, 'generator');
+        changesetMetadata.attribution = this._getAttribute(attributes, 'attribution');
+        changesetMetadata.copyright = this._getAttribute(attributes, 'copyright');
+        changesetMetadata.license = this._getAttribute(attributes, 'license');
+        changesetMetadata.version = this._getAttribute(attributes, 'version');
+
+        if (this._hasAttribute(attributes, 'timestamp'))
+            changesetMetadata.timestamp = new Date(this._getAttribute(attributes, 'timestamp'));
+
+        this.emit('metadata', changesetMetadata);
+    }
 };
 
-XmlChangesetReader.prototype._endElement = function (element, changesets, changeset, callback) {
+XmlChangesetReader.prototype._endElement = function (element) {
     if (element === 'changeset') {
-        changesets.push(changeset);
+        this.changesets.push(this.changeset);
 
-        if (changesets.length >= this.threshold) {
-            callback(changesets);
-            changesets.length = 0;
+        if (this.changesets.length >= this.threshold) {
+            this.emit('data', this.changesets);
+            this.changesets.length = 0;
         }
-    } else if (element === 'osm' && changesets.length > 0) {
-        callback(changesets);
-        changesets.length = 0;
+    }
+    else if (element === 'osm' && this.changesets.length > 0) {
+        this.emit('data', this.changesets);
+        this.changesets.length = 0;
+        this.emit('end');
+    }
+    else if (element === 'osm') {
+        this.emit('end');
     }
 };
 

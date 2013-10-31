@@ -9,6 +9,7 @@ exports.Data = require('./entities/data');
 exports.Note = require('./entities/note');
 exports.NoteComment = require('./entities/notecomment');
 exports.Changeset = require('./entities/changeset');
+exports.ChangesetMetadata = require('./entities/changesetmetadata');
 
 exports.ApiError = require('./apierror');
 exports.KnownApiUrl = require('./knownapiurl');
