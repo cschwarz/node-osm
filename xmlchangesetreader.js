@@ -16,6 +16,8 @@ function XmlChangesetReader(threshold) {
 
     this.changesets = [];
     this.changeset = null;
+
+    this._stream = null;
 }
 
 util.inherits(XmlChangesetReader, events.EventEmitter);
@@ -49,7 +51,20 @@ XmlChangesetReader.prototype.readFile = function (path) {
         self._endElement(element);
     });
 
-    fs.createReadStream(path, { encoding: 'utf8' }).on('data', function (data) { parser.push(data); });
+    this._stream = fs.createReadStream(path, { encoding: 'utf8' });
+    this._stream.on('data', function (data) {
+        parser.push(data);
+    });
+};
+
+XmlChangesetReader.prototype.pause = function () {
+    if (this._stream)
+        this._stream.pause();
+};
+
+XmlChangesetReader.prototype.resume = function () {
+    if (this._stream)
+        this._stream.resume();
 };
 
 XmlChangesetReader.prototype._startElement = function (element, attributes) {
@@ -105,12 +120,12 @@ XmlChangesetReader.prototype._endElement = function (element) {
         this.changesets.push(this.changeset);
 
         if (this.changesets.length >= this.threshold) {
-            this.emit('data', this.changesets);
+            this.emit('data', this.changesets.slice());
             this.changesets.length = 0;
         }
     }
     else if (element === 'osm' && this.changesets.length > 0) {
-        this.emit('data', this.changesets);
+        this.emit('data', this.changesets.slice());
         this.changesets.length = 0;
         this.emit('end');
     }
