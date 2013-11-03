@@ -77,7 +77,9 @@ XmlChangesetReader.prototype._startElement = function (element, attributes) {
         if (this._hasAttribute(attributes, 'closed_at'))
             this.changeset.closedAt = new Date(this._getAttribute(attributes, 'closed_at'));
 
-        this.changeset.changeCount = parseInt(this._getAttribute(attributes, 'num_changes'), 10);
+        if (this._hasAttribute(attributes, 'num_changes'))
+            this.changeset.changeCount = parseInt(this._getAttribute(attributes, 'num_changes'), 10);
+
         this.changeset.open = this._getAttribute(attributes, 'open') === 'true' ? true : false;
 
         if (this._hasAttribute(attributes, 'user'))
