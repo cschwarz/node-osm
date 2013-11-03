@@ -95,11 +95,14 @@ XmlChangesetReader.prototype._startElement = function (element, attributes) {
                                                          parseFloat(this._getAttribute(attributes, 'max_lon')),
                                                          parseFloat(this._getAttribute(attributes, 'max_lat')));
 
-
         this.changeset.id = this._getAttribute(attributes, 'id');
     }
     else if (element === 'tag') {
-        this.changeset.tags[this._getAttribute(attributes, 'k')] = this._getAttribute(attributes, 'v');
+        var key = this._getAttribute(attributes, 'k');
+        var value = this._getAttribute(attributes, 'v');
+
+        if (key !== '' && value !== '')
+            this.changeset.tags[key] = value;
     }
     else if (element === 'osm') {
         var changesetMetadata = new ChangesetMetadata();
