@@ -94,8 +94,6 @@ XmlChangesetReader.prototype._startElement = function (element, attributes) {
                                                          parseFloat(this._getAttribute(attributes, 'min_lat')),
                                                          parseFloat(this._getAttribute(attributes, 'max_lon')),
                                                          parseFloat(this._getAttribute(attributes, 'max_lat')));
-
-        this.changeset.id = this._getAttribute(attributes, 'id');
     }
     else if (element === 'tag') {
         var key = this._getAttribute(attributes, 'k');
