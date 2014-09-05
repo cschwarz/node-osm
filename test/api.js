@@ -26,7 +26,7 @@ describe('Api', function () {
 		it('should return way', function (done) {
 			Api.way(23410161).then(function (way) {
 				assert.equal(way.id, 23410161);
-				assert.equal(way.nodeReferences.length, 6);
+				assert.equal(way.nodeReferences.length, 7);
 				assert.equal(way._nodes.length, 0);
 			},
 			function (e) {
@@ -36,8 +36,8 @@ describe('Api', function () {
 		it('should return way with nodes', function (done) {
 			Api.way(23410161, true).then(function (way) {
 				assert.equal(way.id, 23410161);
-				assert.equal(way.nodeReferences.length, 6);
-				assert.equal(way._nodes.length, 6);
+				assert.equal(way.nodeReferences.length, 7);
+				assert.equal(way._nodes.length, 7);
 			},
 			function (e) {
 				throw new Error(util.inspect(e));
@@ -56,7 +56,7 @@ describe('Api', function () {
 		it('should return relation', function (done) {
 			Api.relation(108723).then(function (relation) {
 				assert.equal(relation.id, 108723);
-				assert.equal(relation.members.length, 143);
+				assert.equal(relation.members.length, 2);
 				assert.equal(relation._nodes.length, 0);
 				assert.equal(relation._ways.length, 0);
 				assert.equal(relation._relations.length, 0);
@@ -68,10 +68,10 @@ describe('Api', function () {
 		it('should return relation with nodes, ways and relations', function (done) {
 			Api.relation(108723, true).then(function (relation) {
 				assert.equal(relation.id, 108723);
-				assert.equal(relation.members.length, 143);
-				assert.equal(relation._nodes.length, 48);
-				assert.equal(relation._ways.length, 95);
-				assert.equal(relation._relations.length, 0);
+				assert.equal(relation.members.length, 2);
+				assert.equal(relation._nodes.length, 0);
+				assert.equal(relation._ways.length, 0);
+				assert.equal(relation._relations.length, 2);
 			},
 			function (e) {
 				throw new Error(util.inspect(e));
