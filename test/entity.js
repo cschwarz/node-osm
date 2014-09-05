@@ -1,4 +1,4 @@
-var Entity = require('../entities/entity');
+var Entity = require('../lib/entities/entity');
 
 var assert = require('assert');
 

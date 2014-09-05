@@ -1,5 +1,5 @@
-var Relation = require('../entities/relation');
-var Member = require('../entities/member');
+var Relation = require('../lib/entities/relation');
+var Member = require('../lib/entities/member');
 
 var assert = require('assert');
 

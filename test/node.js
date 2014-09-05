@@ -1,6 +1,6 @@
-var Node = require('../entities/node');
-var Coordinate = require('../coordinate');
-var BoundingBox = require('../boundingbox');
+var Node = require('../lib/entities/node');
+var Coordinate = require('../lib/coordinate');
+var BoundingBox = require('../lib/boundingbox');
 
 var assert = require('assert');
 

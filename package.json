@@ -2,7 +2,7 @@
   "name": "node-osm",
   "version": "0.0.15",
   "description": "node-osm",
-  "main": "osm.js",
+  "main": "lib/osm.js",
   "scripts": {
     "test": "grunt"
   },

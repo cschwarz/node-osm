@@ -1,5 +1,5 @@
-var NotesApi = require('../notesapi');
-var KnownApiUrl = require('../knownapiurl');
+var NotesApi = require('../lib/notesapi');
+var KnownApiUrl = require('../lib/knownapiurl');
 
 var assert = require('assert');
 var util = require('util');

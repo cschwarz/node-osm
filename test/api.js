@@ -1,4 +1,4 @@
-var Api = require('../api');
+var Api = require('../lib/api');
 
 var assert = require('assert');
 var util = require('util');
