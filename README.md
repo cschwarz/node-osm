@@ -1,4 +1,4 @@
-node-osm
+node-osm [![Build Status](https://travis-ci.org/cschwarz/node-osm.svg?branch=master)](https://travis-ci.org/cschwarz/node-osm)
 ========
 
 A node.js module for working with OpenStreetMap data and the OpenStreetMap API.
