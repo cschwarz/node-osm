@@ -4,7 +4,7 @@
   "description": "node-osm",
   "main": "lib/osm.js",
   "scripts": {
-    "test": "grunt"
+    "test": "jshint lib test && mocha"
   },
   "author": "",
   "license": "MIT",
@@ -14,10 +14,7 @@
     "promise": "~3.2.0",
     "request": "~2.27.0"
   },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-mocha-test": "~0.6.3",
+  "devDependencies": {    
     "mocha": "~1.12.1",
     "replay": "^1.10.3"
   }
