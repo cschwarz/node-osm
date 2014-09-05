@@ -1,7 +1,8 @@
 {
-	"browser": false,
+    "browser": false,
 	"node": true,
 	"strict": false,
+    "predef": ["-Promise"],
 
 	"camelcase": true,
 	"quotmark": "single",
