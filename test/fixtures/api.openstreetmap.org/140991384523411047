@@ -1,0 +1,27 @@
+GET /api/0.6/node/-1
+host: api.openstreetmap.org
+
+404 HTTP/1.1
+date: Fri, 05 Sep 2014 10:44:04 GMT
+server: Apache/2.4.7 (Ubuntu)
+x-request-id: 9a8a6c2a-2b85-47de-94e3-43638ff007fe
+x-runtime: 0.002412
+x-powered-by: Phusion Passenger 4.0.50
+content-length: 623
+status: 404 Not Found
+keep-alive: timeout=5, max=100
+connection: Keep-Alive
+content-type: text/html; charset=utf-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+  <img src="/assets/osm_logo.png" style="float:left; margin:10px">
+  <div style="float:left;">
+    <h1>File not found</h1>  
+    <p>Couldn't find a file/directory/API operation by that name on the OpenStreetMap server (HTTP 404)</p>
+    <p>Feel free to <a href="http://wiki.openstreetmap.org/wiki/Contact" title="Various contact channels explained">contact</a> the OpenStreetMap community if you have found a broken link / bug. Make a note of the exact URL of your request.</p>
+  </div>
+</body>
+</html>

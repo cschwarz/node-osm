@@ -15,9 +15,10 @@
     "request": "~2.27.0"
   },
   "devDependencies": {
-    "mocha": "~1.12.1",
-    "grunt-contrib-jshint": "~0.6.4",
     "grunt": "~0.4.1",
-    "grunt-mocha-test": "~0.6.3"
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-mocha-test": "~0.6.3",
+    "mocha": "~1.12.1",
+    "replay": "^1.10.3"
   }
 }

@@ -2,6 +2,8 @@ var Api = require('../api');
 
 var assert = require('assert');
 var util = require('util');
+var replay = require('replay');
+replay.fixtures = __dirname + '/fixtures';
 
 describe('Api', function () {
 	describe('node()', function () {

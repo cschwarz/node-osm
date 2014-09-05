@@ -1,0 +1,45 @@
+GET /api/0.6/way/23410161/full
+host: api.openstreetmap.org
+
+200 HTTP/1.1
+date: Fri, 05 Sep 2014 10:44:04 GMT
+server: Apache/2.4.7 (Ubuntu)
+content-encoding: identity
+cache-control: no-cache
+vary: Accept-Encoding
+content-type: text/xml; charset=utf-8
+keep-alive: timeout=5, max=100
+connection: Keep-Alive
+transfer-encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.3.3 (7853 thorn-03.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="28150536" visible="true" version="39" changeset="13182731" timestamp="2012-09-20T11:45:30Z" user="Rudolf_H" uid="56501" lat="48.2198417" lon="16.4812346">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="918716999" visible="true" version="2" changeset="5936314" timestamp="2010-10-02T13:40:41Z" user="wolfi1220" uid="86147" lat="48.2221659" lon="16.4748115">
+  <tag k="highway" v="traffic_signals"/>
+ </node>
+ <node id="322261252" visible="true" version="5" changeset="5822214" timestamp="2010-09-19T17:39:15Z" user="wolfi1220" uid="86147" lat="48.2215992" lon="16.4764526"/>
+ <node id="322000537" visible="true" version="6" changeset="5822214" timestamp="2010-09-19T17:39:45Z" user="wolfi1220" uid="86147" lat="48.2212590" lon="16.4773959"/>
+ <node id="2252366679" visible="true" version="1" changeset="15629829" timestamp="2013-04-06T09:26:55Z" user="Rudolf_H" uid="56501" lat="48.2200157" lon="16.4808828"/>
+ <node id="2485645764" visible="true" version="1" changeset="18220948" timestamp="2013-10-06T21:42:46Z" user="stefanct" uid="303158" lat="48.2203524" lon="16.4799277">
+  <tag k="fixme" v="180° forbidden?"/>
+ </node>
+ <node id="286899577" visible="true" version="10" changeset="18220948" timestamp="2013-10-06T21:43:27Z" user="stefanct" uid="303158" lat="48.2209233" lon="16.4783087"/>
+ <way id="23410161" visible="true" version="25" changeset="18220948" timestamp="2013-10-06T21:43:02Z" user="stefanct" uid="303158">
+  <nd ref="28150536"/>
+  <nd ref="2252366679"/>
+  <nd ref="2485645764"/>
+  <nd ref="286899577"/>
+  <nd ref="322000537"/>
+  <nd ref="322261252"/>
+  <nd ref="918716999"/>
+  <tag k="highway" v="primary"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="50"/>
+  <tag k="name" v="Erzherzog-Karl-Straße"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="B3"/>
+ </way>
+</osm>

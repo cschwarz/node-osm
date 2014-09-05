@@ -1,0 +1,107 @@
+GET /api/0.6/notes/148
+host: master.apis.dev.openstreetmap.org
+
+200 HTTP/1.1
+date: Fri, 05 Sep 2014 10:44:05 GMT
+server: Apache/2.2.22 (Ubuntu)
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+vary: Accept-Language
+content-language: en
+etag: "e5d73ccabd41e119f39cd04caa048db9"
+cache-control: max-age=0, private, must-revalidate
+x-request-id: 67fce8f8-79c9-4736-b622-176abe87daab
+x-runtime: 0.049333
+x-powered-by: Phusion Passenger 4.0.50
+status: 200 OK
+keep-alive: timeout=5, max=100
+connection: Keep-Alive
+transfer-encoding: chunked
+content-type: application/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="OpenStreetMap server">
+<note lon="16.3874817" lat="48.1925266">
+  <id>148</id>
+  <url>http://master.apis.dev.openstreetmap.org/api/0.6/notes/148</url>
+  <reopen_url>http://master.apis.dev.openstreetmap.org/api/0.6/notes/148/reopen</reopen_url>
+  <date_created>2013-09-20 08:46:07 UTC</date_created>
+  <status>closed</status>
+  <date_closed>2013-09-20 10:27:57 UTC</date_closed>
+  <comments>
+    <comment>
+      <date>2013-09-20 08:46:08 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>opened</action>
+      <text>Test with link: http://www.refactory.at</text>
+      <html>&lt;p&gt;Test with link: &lt;a href="http://www.refactory.at" rel="nofollow"&gt;http://www.refactory.at&lt;/a&gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 08:46:32 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>closed</action>
+      <text></text>
+      <html>&lt;p&gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 08:46:38 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>reopened</action>
+      <text></text>
+      <html>&lt;p&gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 08:47:14 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>commented</action>
+      <text>Test with html &lt;a href="http://www.refactory.at"&gt;Link&lt;/a&gt;</text>
+      <html>&lt;p&gt;Test with html &amp;lt;a href="&lt;a href="http://www.refactory.at&amp;quot;&amp;gt;Link&amp;lt;/a" rel="nofollow"&gt;http://www.refactory.at"&amp;gt;Link&amp;lt;/a&lt;/a&gt;&amp;gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 08:47:36 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>commented</action>
+      <text>Test without http: www.refactory.at</text>
+      <html>&lt;p&gt;Test without http: &lt;a href="http://www.refactory.at" rel="nofollow"&gt;www.refactory.at&lt;/a&gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 08:48:34 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>closed</action>
+      <text></text>
+      <html>&lt;p&gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 08:57:02 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>reopened</action>
+      <text></text>
+      <html>&lt;p&gt;&lt;/p&gt;</html>
+    </comment>
+    <comment>
+      <date>2013-09-20 10:27:57 UTC</date>
+      <uid>1412</uid>
+      <user>refactorydev</user>
+      <user_url>http://master.apis.dev.openstreetmap.org/user/refactorydev</user_url>
+      <action>closed</action>
+      <text>www.refactory.at</text>
+      <html>&lt;p&gt;&lt;a href="http://www.refactory.at" rel="nofollow"&gt;www.refactory.at&lt;/a&gt;&lt;/p&gt;</html>
+    </comment>
+  </comments>
+</note>
+</osm>

@@ -1,0 +1,266 @@
+GET /api/0.6/relation/108723/full
+host: api.openstreetmap.org
+
+200 HTTP/1.1
+date: Fri, 05 Sep 2014 10:44:05 GMT
+server: Apache/2.4.7 (Ubuntu)
+content-encoding: identity
+cache-control: no-cache
+vary: Accept-Encoding
+content-type: text/xml; charset=utf-8
+keep-alive: timeout=5, max=100
+connection: Keep-Alive
+transfer-encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.3.3 (7855 thorn-03.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <relation id="108723" visible="true" version="56" changeset="18190128" timestamp="2013-10-05T07:07:35Z" user="wolfi1220" uid="86147">
+  <member type="relation" ref="3239929" role=""/>
+  <member type="relation" ref="3239928" role=""/>
+  <tag k="name" v="Bus 26A"/>
+  <tag k="network" v="VOR"/>
+  <tag k="operator" v="Wiener Linien"/>
+  <tag k="ref" v="26A"/>
+  <tag k="route_master" v="bus"/>
+  <tag k="type" v="route_master"/>
+ </relation>
+ <relation id="3239929" visible="true" version="5" changeset="18339953" timestamp="2013-10-13T20:17:31Z" user="wolfi1220" uid="86147">
+  <member type="node" ref="61683668" role="stop"/>
+  <member type="node" ref="2479515471" role="platform"/>
+  <member type="node" ref="2479515457" role="stop"/>
+  <member type="node" ref="525603032" role="platform"/>
+  <member type="node" ref="2479515469" role="stop"/>
+  <member type="node" ref="616870640" role="platform"/>
+  <member type="node" ref="2479515456" role="stop"/>
+  <member type="node" ref="616870636" role="platform"/>
+  <member type="node" ref="2479515478" role="stop"/>
+  <member type="node" ref="616870648" role="platform"/>
+  <member type="node" ref="298622107" role="stop"/>
+  <member type="way" ref="54439888" role="platform"/>
+  <member type="node" ref="2495447353" role="stop"/>
+  <member type="way" ref="241974724" role="platform"/>
+  <member type="node" ref="2479515467" role="stop"/>
+  <member type="node" ref="534823389" role="platform"/>
+  <member type="node" ref="2479515483" role="stop"/>
+  <member type="node" ref="769224010" role="platform"/>
+  <member type="node" ref="2479515452" role="stop"/>
+  <member type="node" ref="918717034" role="platform"/>
+  <member type="node" ref="28150541" role="stop"/>
+  <member type="node" ref="476068483" role="platform"/>
+  <member type="node" ref="2479515481" role="stop"/>
+  <member type="node" ref="616438676" role="platform"/>
+  <member type="node" ref="2479515475" role="stop"/>
+  <member type="node" ref="616438681" role="platform"/>
+  <member type="node" ref="2479515479" role="stop"/>
+  <member type="node" ref="616438686" role="platform"/>
+  <member type="node" ref="2479515461" role="stop"/>
+  <member type="node" ref="616438689" role="platform"/>
+  <member type="node" ref="726664385" role="stop"/>
+  <member type="node" ref="616438690" role="platform"/>
+  <member type="node" ref="28150551" role="stop"/>
+  <member type="node" ref="616438692" role="platform"/>
+  <member type="node" ref="2479515460" role="stop"/>
+  <member type="node" ref="616438715" role="platform"/>
+  <member type="node" ref="461108433" role="stop"/>
+  <member type="node" ref="616438701" role="platform"/>
+  <member type="node" ref="2479515477" role="stop"/>
+  <member type="node" ref="616438704" role="platform"/>
+  <member type="node" ref="2479515459" role="stop"/>
+  <member type="node" ref="616438720" role="platform"/>
+  <member type="node" ref="2479515466" role="stop"/>
+  <member type="node" ref="616438726" role="platform"/>
+  <member type="node" ref="2479515464" role="stop"/>
+  <member type="node" ref="616438697" role="platform"/>
+  <member type="node" ref="2479515463" role="stop"/>
+  <member type="node" ref="616438694" role="platform"/>
+  <member type="way" ref="240196849" role=""/>
+  <member type="way" ref="61010021" role=""/>
+  <member type="way" ref="36503124" role=""/>
+  <member type="way" ref="200827174" role=""/>
+  <member type="way" ref="229740699" role=""/>
+  <member type="way" ref="10424447" role=""/>
+  <member type="way" ref="237070855" role=""/>
+  <member type="way" ref="31548951" role=""/>
+  <member type="way" ref="236959376" role=""/>
+  <member type="way" ref="219103108" role=""/>
+  <member type="way" ref="219103109" role=""/>
+  <member type="way" ref="5061165" role=""/>
+  <member type="way" ref="236960017" role=""/>
+  <member type="way" ref="236960018" role=""/>
+  <member type="way" ref="10425521" role=""/>
+  <member type="way" ref="90583325" role=""/>
+  <member type="way" ref="143903357" role=""/>
+  <member type="way" ref="219103531" role=""/>
+  <member type="way" ref="219103532" role=""/>
+  <member type="way" ref="34826569" role=""/>
+  <member type="way" ref="219103530" role=""/>
+  <member type="way" ref="219103528" role=""/>
+  <member type="way" ref="35078665" role=""/>
+  <member type="way" ref="35078669" role=""/>
+  <member type="way" ref="35078662" role=""/>
+  <member type="way" ref="35078663" role=""/>
+  <member type="way" ref="241974725" role=""/>
+  <member type="way" ref="241974723" role=""/>
+  <member type="way" ref="236074103" role=""/>
+  <member type="way" ref="236074104" role=""/>
+  <member type="way" ref="34747791" role=""/>
+  <member type="way" ref="80043360" role=""/>
+  <member type="way" ref="34693028" role=""/>
+  <member type="way" ref="29286758" role=""/>
+  <member type="way" ref="36504292" role=""/>
+  <member type="way" ref="34747745" role=""/>
+  <member type="way" ref="35081420" role=""/>
+  <member type="way" ref="23406179" role=""/>
+  <member type="way" ref="23406177" role=""/>
+  <member type="way" ref="30008540" role=""/>
+  <member type="way" ref="35077304" role=""/>
+  <member type="way" ref="23406168" role=""/>
+  <member type="way" ref="30008542" role=""/>
+  <member type="way" ref="35202895" role=""/>
+  <member type="way" ref="35077303" role=""/>
+  <member type="way" ref="35202896" role=""/>
+  <member type="way" ref="35202894" role=""/>
+  <member type="way" ref="34693425" role=""/>
+  <member type="way" ref="34693424" role=""/>
+  <member type="way" ref="28746008" role=""/>
+  <member type="way" ref="4534465" role=""/>
+  <member type="way" ref="123243015" role=""/>
+  <member type="way" ref="47635951" role=""/>
+  <member type="way" ref="53473822" role=""/>
+  <member type="way" ref="53473821" role=""/>
+  <member type="way" ref="29418060" role=""/>
+  <member type="way" ref="53473820" role=""/>
+  <member type="way" ref="30604556" role=""/>
+  <member type="way" ref="53473811" role=""/>
+  <member type="way" ref="29418062" role=""/>
+  <member type="way" ref="30606096" role=""/>
+  <member type="way" ref="30604739" role=""/>
+  <tag k="from" v="Kagran"/>
+  <tag k="name" v="Bus 26A: Kagran =&gt; Groß-Enzersdorf, Busbahnhof"/>
+  <tag k="network" v="VOR"/>
+  <tag k="operator" v="Wiener Linien"/>
+  <tag k="ref" v="26A"/>
+  <tag k="route" v="bus"/>
+  <tag k="to" v="Groß-Enzersdorf, Busbahnhof"/>
+  <tag k="type" v="route"/>
+ </relation>
+ <relation id="3239928" visible="true" version="4" changeset="18824414" timestamp="2013-11-10T20:49:54Z" user="mapper_07" uid="12295">
+  <member type="node" ref="2479515463" role="stop"/>
+  <member type="node" ref="616438694" role="platform"/>
+  <member type="node" ref="2479515465" role="stop"/>
+  <member type="node" ref="616438699" role="platform"/>
+  <member type="node" ref="2479515466" role="stop"/>
+  <member type="node" ref="616438723" role="platform"/>
+  <member type="node" ref="2479515459" role="stop"/>
+  <member type="node" ref="616438718" role="platform"/>
+  <member type="node" ref="2479515477" role="stop"/>
+  <member type="node" ref="616438706" role="platform"/>
+  <member type="node" ref="461108433" role="stop"/>
+  <member type="node" ref="608481326" role="platform"/>
+  <member type="node" ref="2479515460" role="stop"/>
+  <member type="node" ref="608481330" role="platform"/>
+  <member type="node" ref="28150551" role="stop"/>
+  <member type="node" ref="616438693" role="platform"/>
+  <member type="node" ref="726664358" role="stop"/>
+  <member type="node" ref="616438691" role="platform"/>
+  <member type="node" ref="2479515462" role="stop"/>
+  <member type="node" ref="616438688" role="platform"/>
+  <member type="node" ref="2479515480" role="stop"/>
+  <member type="node" ref="616438683" role="platform"/>
+  <member type="node" ref="2479515476" role="stop"/>
+  <member type="node" ref="616438678" role="platform"/>
+  <member type="node" ref="2479515481" role="stop"/>
+  <member type="node" ref="616438672" role="platform"/>
+  <member type="node" ref="28150541" role="stop"/>
+  <member type="node" ref="608500185" role="platform"/>
+  <member type="node" ref="2479515453" role="stop"/>
+  <member type="node" ref="918717011" role="platform"/>
+  <member type="node" ref="2479515482" role="stop"/>
+  <member type="node" ref="616870622" role="platform"/>
+  <member type="node" ref="2479515468" role="stop"/>
+  <member type="node" ref="616870615" role="platform"/>
+  <member type="node" ref="2479515473" role="stop"/>
+  <member type="node" ref="616870613" role="platform"/>
+  <member type="node" ref="298622107" role="stop"/>
+  <member type="way" ref="54439889" role="platform"/>
+  <member type="node" ref="322044153" role="stop"/>
+  <member type="node" ref="616870650" role="platform"/>
+  <member type="node" ref="2479515455" role="stop"/>
+  <member type="node" ref="616870638" role="platform"/>
+  <member type="node" ref="2479515470" role="stop"/>
+  <member type="node" ref="616870646" role="platform"/>
+  <member type="node" ref="2479515454" role="stop"/>
+  <member type="node" ref="525603047" role="platform"/>
+  <member type="node" ref="2479515458" role="stop"/>
+  <member type="node" ref="616870603" role="platform"/>
+  <member type="node" ref="412530342" role="stop"/>
+  <member type="node" ref="2479515472" role="platform"/>
+  <member type="way" ref="240196848" role=""/>
+  <member type="way" ref="30604641" role=""/>
+  <member type="way" ref="35143702" role=""/>
+  <member type="way" ref="53473811" role=""/>
+  <member type="way" ref="30604556" role=""/>
+  <member type="way" ref="53473820" role=""/>
+  <member type="way" ref="29418060" role=""/>
+  <member type="way" ref="53473821" role=""/>
+  <member type="way" ref="53473822" role=""/>
+  <member type="way" ref="47635951" role=""/>
+  <member type="way" ref="123243015" role=""/>
+  <member type="way" ref="4534465" role=""/>
+  <member type="way" ref="28746008" role=""/>
+  <member type="way" ref="34693424" role=""/>
+  <member type="way" ref="34693425" role=""/>
+  <member type="way" ref="35202894" role=""/>
+  <member type="way" ref="35202896" role=""/>
+  <member type="way" ref="35077303" role=""/>
+  <member type="way" ref="35202895" role=""/>
+  <member type="way" ref="30008542" role=""/>
+  <member type="way" ref="30008541" role=""/>
+  <member type="way" ref="30008543" role=""/>
+  <member type="way" ref="34697616" role=""/>
+  <member type="way" ref="23406177" role=""/>
+  <member type="way" ref="23406179" role=""/>
+  <member type="way" ref="35081420" role=""/>
+  <member type="way" ref="34747745" role=""/>
+  <member type="way" ref="36504292" role=""/>
+  <member type="way" ref="29286758" role=""/>
+  <member type="way" ref="23410161" role=""/>
+  <member type="way" ref="80286717" role=""/>
+  <member type="way" ref="34747782" role=""/>
+  <member type="way" ref="35078664" role=""/>
+  <member type="way" ref="35078668" role=""/>
+  <member type="way" ref="35078663" role=""/>
+  <member type="way" ref="35078662" role=""/>
+  <member type="way" ref="35078669" role=""/>
+  <member type="way" ref="35078666" role=""/>
+  <member type="way" ref="35078672" role=""/>
+  <member type="way" ref="34826559" role=""/>
+  <member type="way" ref="219103529" role=""/>
+  <member type="way" ref="219103527" role=""/>
+  <member type="way" ref="34826577" role=""/>
+  <member type="way" ref="219103110" role=""/>
+  <member type="way" ref="23410236" role=""/>
+  <member type="way" ref="27190736" role=""/>
+  <member type="way" ref="35079453" role=""/>
+  <member type="way" ref="42204371" role=""/>
+  <member type="way" ref="229740697" role=""/>
+  <member type="way" ref="229740696" role=""/>
+  <member type="way" ref="229740695" role=""/>
+  <member type="way" ref="31548948" role=""/>
+  <member type="way" ref="32875018" role=""/>
+  <member type="way" ref="245524314" role=""/>
+  <member type="way" ref="237070851" role=""/>
+  <member type="way" ref="245524313" role=""/>
+  <member type="way" ref="62252698" role=""/>
+  <member type="way" ref="197716517" role=""/>
+  <member type="way" ref="35171914" role=""/>
+  <tag k="from" v="Groß-Enzersdorf, Busbahnhof"/>
+  <tag k="name" v="Bus 26A: Groß-Enzersdorf, Busbahnhof =&gt; Kagran"/>
+  <tag k="network" v="VOR"/>
+  <tag k="operator" v="Wiener Linien"/>
+  <tag k="ref" v="26A"/>
+  <tag k="route" v="bus"/>
+  <tag k="to" v="Kagran"/>
+  <tag k="type" v="route"/>
+ </relation>
+</osm>

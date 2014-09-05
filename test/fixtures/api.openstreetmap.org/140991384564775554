@@ -1,0 +1,27 @@
+GET /api/0.6/relation/108723
+host: api.openstreetmap.org
+
+200 HTTP/1.1
+date: Fri, 05 Sep 2014 10:44:05 GMT
+server: Apache/2.4.7 (Ubuntu)
+content-encoding: identity
+cache-control: no-cache
+vary: Accept-Encoding
+content-type: text/xml; charset=utf-8
+keep-alive: timeout=5, max=100
+connection: Keep-Alive
+transfer-encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.3.3 (15658 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <relation id="108723" visible="true" version="56" changeset="18190128" timestamp="2013-10-05T07:07:35Z" user="wolfi1220" uid="86147">
+  <member type="relation" ref="3239929" role=""/>
+  <member type="relation" ref="3239928" role=""/>
+  <tag k="name" v="Bus 26A"/>
+  <tag k="network" v="VOR"/>
+  <tag k="operator" v="Wiener Linien"/>
+  <tag k="ref" v="26A"/>
+  <tag k="route_master" v="bus"/>
+  <tag k="type" v="route_master"/>
+ </relation>
+</osm>

@@ -1,0 +1,28 @@
+GET /api/0.6/node/537791625
+host: api.openstreetmap.org
+
+200 HTTP/1.1
+date: Fri, 05 Sep 2014 10:44:04 GMT
+server: Apache/2.4.7 (Ubuntu)
+content-encoding: identity
+cache-control: no-cache
+vary: Accept-Encoding
+content-type: text/xml; charset=utf-8
+keep-alive: timeout=5, max=100
+connection: Keep-Alive
+transfer-encoding: chunked
+
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.3.3 (5681 thorn-01.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="537791625" visible="true" version="8" changeset="18788591" timestamp="2013-11-08T19:58:28Z" user="cschwarz" uid="1184418" lat="48.2201450" lon="16.4812254">
+  <tag k="addr:city" v="Wien"/>
+  <tag k="addr:housenumber" v="117a"/>
+  <tag k="addr:postcode" v="1220"/>
+  <tag k="addr:street" v="Aspernstraße"/>
+  <tag k="amenity" v="restaurant"/>
+  <tag k="name" v="Lahodny"/>
+  <tag k="opening_hours" v="Mo-Sa 10:00-23:00; Su 09:00-17:00"/>
+  <tag k="website" v="http://www.lahodny.at/"/>
+  <tag k="wheelchair" v="no"/>
+ </node>
+</osm>
